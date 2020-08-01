@@ -63,8 +63,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AppScreen.cs" />
     <Compile Include="Assets\Scripts\ClickApp.cs" />
     <Compile Include="Assets\Scripts\PhoneGeneral.cs" />
+    <Compile Include="Assets\Scripts\StoryManager.cs" />
     <Compile Include="Assets\Scripts\SwipeToUnlock.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/atiya/Desktop/InkJam2020/Inkjam2020_Atiya/InkJam2020/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

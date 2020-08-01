@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ink-Libraries", "Ink-Libraries.csproj", "{D6F72FED-3588-4B24-E740-737191A6E169}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{98DDA5B6-424D-9C82-BDE1-98A043A79A4A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{B29BD12A-E091-FD70-F736-093D39E216C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{98DDA5B6-424D-9C82-BDE1-98A043A79A4A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{5F72075B-F1DD-5343-F798-4F3EDB1AACC4}"
 EndProject
@@ -19,14 +19,14 @@ Global
 		{D6F72FED-3588-4B24-E740-737191A6E169}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6F72FED-3588-4B24-E740-737191A6E169}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6F72FED-3588-4B24-E740-737191A6E169}.Release|Any CPU.Build.0 = Release|Any CPU
-		{98DDA5B6-424D-9C82-BDE1-98A043A79A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98DDA5B6-424D-9C82-BDE1-98A043A79A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98DDA5B6-424D-9C82-BDE1-98A043A79A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98DDA5B6-424D-9C82-BDE1-98A043A79A4A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B29BD12A-E091-FD70-F736-093D39E216C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B29BD12A-E091-FD70-F736-093D39E216C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B29BD12A-E091-FD70-F736-093D39E216C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B29BD12A-E091-FD70-F736-093D39E216C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98DDA5B6-424D-9C82-BDE1-98A043A79A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98DDA5B6-424D-9C82-BDE1-98A043A79A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98DDA5B6-424D-9C82-BDE1-98A043A79A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98DDA5B6-424D-9C82-BDE1-98A043A79A4A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5F72075B-F1DD-5343-F798-4F3EDB1AACC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5F72075B-F1DD-5343-F798-4F3EDB1AACC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F72075B-F1DD-5343-F798-4F3EDB1AACC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
