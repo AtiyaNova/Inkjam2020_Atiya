@@ -64,7 +64,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AppScreen.cs" />
+    <Compile Include="Assets\Scripts\CallWitch.cs" />
     <Compile Include="Assets\Scripts\ClickApp.cs" />
+    <Compile Include="Assets\Scripts\ExpandedImage.cs" />
+    <Compile Include="Assets\Scripts\GalleryIcon.cs" />
+    <Compile Include="Assets\Scripts\HomeButton.cs" />
     <Compile Include="Assets\Scripts\PhoneGeneral.cs" />
     <Compile Include="Assets\Scripts\StoryManager.cs" />
     <Compile Include="Assets\Scripts\SwipeToUnlock.cs" />

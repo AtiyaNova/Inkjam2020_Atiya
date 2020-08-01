@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AppScreen : MonoBehaviour
 {
     //The pages
     [SerializeField]
-    GameObject mainScreen, profileScreen;
+    GameObject mainScreen, profileScreen, confirmCall;
+    [SerializeField]
+    ExpandedImage expandImage;
 
     //Singleton
     public static AppScreen instance;
@@ -19,8 +22,17 @@ public class AppScreen : MonoBehaviour
 
     private void Start()
     {
+        OpenApp();
+        expandImage.gameObject.SetActive(false);
+        confirmCall.SetActive(false);
+    }
+
+    public void OpenApp()
+    {
         mainScreen.SetActive(true);
         profileScreen.SetActive(false);
+        confirmCall.SetActive(false);
+        expandImage.Close();
     }
 
     public void TravelToProfile()
@@ -37,26 +49,22 @@ public class AppScreen : MonoBehaviour
 
     public void ConfirmCall()
     {
-
+        confirmCall.SetActive(true);
     }
 
     public void CancelCall()
     {
-
+        confirmCall.SetActive(false);
     }
 
     public void Call()
     {
-
+        PhoneGeneral.instance.SwitchToStory();
     }
 
-    public void ExpandImage()
+    public void ExpandImage(Texture image)
     {
-
+        expandImage.Open(image);
     }
 
-    public void CloseImage()
-    {
-
-    }
 }
