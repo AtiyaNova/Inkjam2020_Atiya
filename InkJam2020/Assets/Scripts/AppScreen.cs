@@ -10,6 +10,15 @@ public class AppScreen : MonoBehaviour
     GameObject mainScreen, profileScreen, confirmCall;
     [SerializeField]
     ExpandedImage expandImage;
+    [SerializeField]
+    RawImage pfp;
+    [SerializeField]
+    Text description;
+    [SerializeField]
+    private GalleryIcon[] galleryIcons;
+
+    //The Witch
+    private Witch currentWitch;
 
     //Singleton
     public static AppScreen instance;
@@ -35,8 +44,17 @@ public class AppScreen : MonoBehaviour
         expandImage.Close();
     }
 
-    public void TravelToProfile()
+    public void TravelToProfile(CardTemplate witch)
     {
+        currentWitch = witch.theWitch;
+        pfp.texture = currentWitch.GetPfp();
+        description.text = currentWitch.GetDescription();
+
+        for (int i = 0; i < galleryIcons.Length; i++)
+        {
+            galleryIcons[i].SetImages(currentWitch.GetThumbnail(i), currentWitch.GetExpanded(i));
+        }
+
         mainScreen.SetActive(false);
         profileScreen.SetActive(true);
     }
@@ -60,6 +78,7 @@ public class AppScreen : MonoBehaviour
     public void Call()
     {
         PhoneGeneral.instance.SwitchToStory();
+        StoryManager.instance.PickWitch(currentWitch.GetChoice());
     }
 
     public void ExpandImage(Texture image)

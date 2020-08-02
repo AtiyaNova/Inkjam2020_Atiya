@@ -11,22 +11,20 @@ public class GalleryIcon : MonoBehaviour
 {
     [SerializeField]
     private Texture thumbnail, full;
-    private RawImage icon;
+    public RawImage icon;
     private Color orig, highlight;
 
     private void Start()
     {
-        icon = GetComponent<RawImage>();
-        icon.texture = thumbnail;
-
         orig = icon.color;
-        highlight = new Color(1f, 1f, 1f, 0.8f);
+        highlight = new Color(0.6f, 0.6f, 0.6f, 0.5f);
     }
 
     public void SetImages(Texture img1, Texture img2)
     {
         thumbnail = img1;
         full = img2;
+        icon.texture = thumbnail;
     }
 
     public void OnPointerClick(PointerEventData eventData)

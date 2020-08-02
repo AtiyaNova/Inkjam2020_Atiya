@@ -17,7 +17,7 @@ public class CallWitch : MonoBehaviour
         sourceImg = GetComponent<RawImage>();
 
         orig = sourceImg.color;
-        highlight = new Color(1f, 1f, 1f, 0.5f);
+        highlight = new Color(0.5f, 0.5f, 0.5f, 1f);
     }
 
     public void OnPointerClick(PointerEventData eventData)
