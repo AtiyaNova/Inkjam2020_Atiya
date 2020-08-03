@@ -77,6 +77,7 @@ public class AppScreen : MonoBehaviour
 
     public void Call()
     {
+        GoBack();
         PhoneGeneral.instance.SwitchToStory();
         StoryManager.instance.PickWitch(currentWitch.GetChoice());
     }

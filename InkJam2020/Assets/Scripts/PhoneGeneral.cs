@@ -40,9 +40,4 @@ public class PhoneGeneral : MonoBehaviour
         grayBlock.SetActive(true);
     }
 
-    public void SwitchToPhone()
-    {
-        grayBlock.SetActive(false);
-
-    }
 }

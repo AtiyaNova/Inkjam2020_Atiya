@@ -22,6 +22,7 @@ public class ClickApp : MonoBehaviour
     public void OnPointerClick(PointerEventData eventData)
     {
         PhoneGeneral.instance.ChangeScreens(false, false, true);
+        AppScreen.instance.OpenApp();
         appArt.color = orig;
     }
 

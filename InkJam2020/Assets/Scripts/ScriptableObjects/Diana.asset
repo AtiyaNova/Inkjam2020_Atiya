@@ -18,9 +18,9 @@ MonoBehaviour:
   choiceNum: 0
   thumbnails:
   - {fileID: 2800000, guid: d06996a692f69c4418a19d7cc8c16491, type: 3}
-  - {fileID: 2800000, guid: d06996a692f69c4418a19d7cc8c16491, type: 3}
-  - {fileID: 2800000, guid: d06996a692f69c4418a19d7cc8c16491, type: 3}
+  - {fileID: 2800000, guid: 75b082f58acb8d14480e34b54219c016, type: 3}
+  - {fileID: 2800000, guid: d41d3cbc6f8751f48bfdd7f1bad4a4c5, type: 3}
   expanded:
-  - {fileID: 2800000, guid: dace8f5ef1f568b4ab7fb5924ac618da, type: 3}
-  - {fileID: 2800000, guid: dace8f5ef1f568b4ab7fb5924ac618da, type: 3}
-  - {fileID: 2800000, guid: dace8f5ef1f568b4ab7fb5924ac618da, type: 3}
+  - {fileID: 2800000, guid: a7c52481d91d2064eacbd630e6185603, type: 3}
+  - {fileID: 2800000, guid: 1d80be01dc8969e4dba4fba6f6650865, type: 3}
+  - {fileID: 2800000, guid: 53876f2be13d1754399367539f62445f, type: 3}

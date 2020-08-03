@@ -17,10 +17,10 @@ MonoBehaviour:
   pfp: {fileID: 2800000, guid: 27c27bd7370abec47bf3ed62f891f0ae, type: 3}
   choiceNum: 2
   thumbnails:
-  - {fileID: 2800000, guid: 9a4489c63a3330c4c89b12e24d9dbc70, type: 3}
-  - {fileID: 2800000, guid: 43d72618deab05e4f8b71ce1c375dfc4, type: 3}
-  - {fileID: 2800000, guid: ab12885a47a21456596113fc9233946c, type: 3}
+  - {fileID: 2800000, guid: 62171fed97c46fb4ab2006286c41ffd4, type: 3}
+  - {fileID: 2800000, guid: 8a724d4406750aa478827a0fe53c398d, type: 3}
+  - {fileID: 2800000, guid: 299c7d026f600d544b2c095636b7faac, type: 3}
   expanded:
-  - {fileID: 2800000, guid: 1e91fdbfb2b154a18b675257bc4d43d9, type: 3}
-  - {fileID: 2800000, guid: ab12885a47a21456596113fc9233946c, type: 3}
-  - {fileID: 2800000, guid: 9a4489c63a3330c4c89b12e24d9dbc70, type: 3}
+  - {fileID: 2800000, guid: c81f7d10f1c78154d8403d533193d3e6, type: 3}
+  - {fileID: 2800000, guid: 3915926ac68fa244f93d298bdcb1e772, type: 3}
+  - {fileID: 2800000, guid: 87554192917933649947ee3fa33cad97, type: 3}
