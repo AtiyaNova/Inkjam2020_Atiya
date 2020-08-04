@@ -13,6 +13,8 @@ public class GalleryIcon : MonoBehaviour
     private Texture thumbnail, full;
     public RawImage icon;
     private Color orig, highlight;
+    private int index = 0;
+    private string desc;
 
     private void Start()
     {
@@ -20,16 +22,22 @@ public class GalleryIcon : MonoBehaviour
         highlight = new Color(0.6f, 0.6f, 0.6f, 0.5f);
     }
 
-    public void SetImages(Texture img1, Texture img2)
+    public void SetIndex(int i)
+    {
+        index = i;
+    }
+
+    public void SetImages(Texture img1, Texture img2, string desc2)
     {
         thumbnail = img1;
         full = img2;
         icon.texture = thumbnail;
+        desc = desc2;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        AppScreen.instance.ExpandImage(full);
+        AppScreen.instance.ExpandImage(full, desc);
         icon.color = orig;
     }
 

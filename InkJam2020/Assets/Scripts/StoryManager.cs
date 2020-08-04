@@ -15,7 +15,7 @@ public class StoryManager : MonoBehaviour
     private Text storyText;
 
     [SerializeField]
-    private GameObject phoneLocked, gameplayCover;
+    private GameObject phoneLocked, gameplayCover, poltergeist;
     [SerializeField]
     private GameObject[] speechChoices;
 
@@ -56,10 +56,15 @@ public class StoryManager : MonoBehaviour
             CalculateEnding();
         });
 
-       
+        story.BindExternalFunction("ActivatePoltergeist", (bool temp) =>
+        {
+            ActivatePoltergeist(temp);
+        });
+
 
         for (int i = 0; i < speechChoices.Length; i++) speechChoices[i].SetActive(false);
         character.gameObject.SetActive(false);
+        poltergeist.SetActive(false);
         LockPhone(true);
         ContinueStory();
     }
@@ -112,6 +117,8 @@ public class StoryManager : MonoBehaviour
 
     }
 
+    
+
     private void SetCharacter(bool temp)
     {
         character.gameObject.SetActive(temp);
@@ -125,5 +132,11 @@ public class StoryManager : MonoBehaviour
     private void CalculateEnding()
     {
 
+    }
+
+    private void ActivatePoltergeist(bool temp)
+    {
+        scenery.texture = sceneries[0];
+        poltergeist.SetActive(temp);
     }
 }

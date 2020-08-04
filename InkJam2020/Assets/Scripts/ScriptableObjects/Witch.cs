@@ -18,6 +18,9 @@ public class Witch : ScriptableObject
     [SerializeField]
     private Texture[] thumbnails, expanded;
 
+    [SerializeField]
+    private string[] galleryDesc;
+
     //Getters
     public Texture GetPfp()
     {
@@ -47,5 +50,10 @@ public class Witch : ScriptableObject
     public Texture GetExpanded(int i)
     {
         return expanded[i];
+    }
+
+    public string GetGalleryDesc(int i)
+    {
+        return galleryDesc[i];
     }
 }

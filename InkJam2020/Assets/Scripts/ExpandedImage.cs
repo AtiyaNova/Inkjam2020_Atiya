@@ -9,11 +9,14 @@ public class ExpandedImage : MonoBehaviour
 {
     [SerializeField]
     private RawImage image;
+    [SerializeField]
+    private Text desc;
 
-    public void Open(Texture newText)
+    public void Open(Texture newText, string newDesc)
     {
         gameObject.SetActive(true);
         image.texture = newText;
+        desc.text = newDesc;
     }
 
     public void Close()

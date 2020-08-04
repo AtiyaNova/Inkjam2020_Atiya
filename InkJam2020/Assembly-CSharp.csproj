@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\GalleryIcon.cs" />
     <Compile Include="Assets\Scripts\HomeButton.cs" />
     <Compile Include="Assets\Scripts\PhoneGeneral.cs" />
+    <Compile Include="Assets\Scripts\Poltergeist.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Witch.cs" />
     <Compile Include="Assets\Scripts\StoryManager.cs" />
     <Compile Include="Assets\Scripts\SwipeToUnlock.cs" />

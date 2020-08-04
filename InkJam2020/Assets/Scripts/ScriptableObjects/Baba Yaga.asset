@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Baba Yaga
   m_EditorClassIdentifier: 
   witchName: Baba Yaga
-  pfDesc: 'I eat kids. '
+  pfDesc: What is this.
   pfp: {fileID: 2800000, guid: 4e71f327b96129645ab5e2a63af1b715, type: 3}
   choiceNum: 1
   thumbnails:
@@ -24,3 +24,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: ff26149557bc8524ca55147bb919b568, type: 3}
   - {fileID: 2800000, guid: 2cc4d6b99fa45e54994f7014d7d189d9, type: 3}
   - {fileID: 2800000, guid: 716a3a70f2710cb458fef1ff2245c51a, type: 3}
+  galleryDesc:
+  - Pie.
+  - Chicken Legs.
+  - My broom.

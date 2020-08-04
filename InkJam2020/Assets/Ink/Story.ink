@@ -1,285 +1,366 @@
 EXTERNAL SetCharacter(active)
 EXTERNAL ChangeScenery(index)
 EXTERNAL CalculateEndering()
+EXTERNAL ActivatePoltergeist(temp)
 
-Recently, I’ve been hired to test out an experimental app called “Witch Helpers” before its release. The whole purpose of this app is to allow the user to summon a witch of their choosing in their time of need. 
+You've been hired to test out an experimental app called “Witch Helpers” before its release. The purpose of this app is to allow the user to summon a witch of their choosing in their time of need. 
 
-I’ve been given a trial version to test out for a handful of days, and then give the developers feedback. Already I can tell that the app has some issues—it’s not very clear what kind of tasks the witches are up to. I guess I’ll have to figure that out myself… 
+You've been given a trial version to test out for a handful of days, and then give the developers feedback. You can already tell that the app has some issues, as it’s not very clear what kind of tasks the witches are up to. It seems you'll have to figure that out yourself. 
 
 Day 1
-    {ChangeScenery(1)}
-I've been at work all day, and by the time I arrive home I realized that I had no food left. I could go out and buy groceries again... but I need to use the app. Maybe one of the witches could help...?
+    {ChangeScenery(9)}
+You've been at work all day, and by the time you arrive home you realize that you feel too tired to cook food. You <i>could</i> go out and pick something up, though you can't help but wonder if giving one of the witches a call wouldn't be a better option... 
+You unlock your phone. 
     {ChangeScenery(0)}
 
 *You choose to call Diana.
 {SetCharacter(true)}
-    Diana arrived.
-    "I'm assuming you're the only who called me, mortal" She asked. I nod my head yes. "I'm goddess of the witches or smth or another, don't waste my time."
+    Diana arrives with a flourish of her dress. "I'm assuming you're the only who called me," She drawls. Her cat lets out a mewl of acknowledgement. 
+    You nod your head yes. "Well I hope you have a task worthy of my caliber... I wouldn't want you wasting my time."
     **"How good are your cooking skills?"
-        I don't understand.
+        "My... cooking? What about it?"
     **"I'm really hungry."
-        What of it?
+        "So? What of it?"
     --"I called you because I'm hungry and I was hoping you'd cook."
-   "How dare you waste my time with such trifles?" 
-   She turned on her heel and stormed off, her cat mewling after her. 
+   Her face is calm at first. Then she flushes an angry scarlet. 
+   "How dare you waste my time with such trifles? Are you trying to make a mockery of me?"
+   You raise your hands and attempt to explain, but before you know it she's gone, disappearing as suddenly as she arrived.
    {SetCharacter(false)}
-    Your stomach growled in hunger. You decided to just order takeout.
+    You feel a little off put by her reaction. 
+           {ChangeScenery(2)}
+    Perhaps you should've called another witch. 
+    You end the night by ordering takeout. 
     
-*You choose chose to call Baba Yaga.
+*You choose to call Baba Yaga.
 {SetCharacter(true)}
-    Baga yaga arrived.
-    "Hah? Who are you?"
-    **How good are your cooking skills?
-        "Quite good if I do say so myself."
-    **I'm really hungry.
-        "So am I. Perhaps I should eat you?"
+    Baga yaga appears in your apartment. She walks over to you, squinting her eyes.
+    "Hah? Who are you?" she asks, promptly sticking a finger in her ear. 
+    **"How good are your cooking skills?"
+        She puffs out her chest, much like a peacock. "Quite good, if I do say so myself."
+    **"I'm really hungry."
+        She becomes thoughtful. "So am I," she admits. "Say, how good do you taste?"
     --"I called you because I'm hungry and I was hoping you'd cook."
-    "Oh! That's easy. I can do that."
-    {ChangeScenery(3)}
+    She squints again. "Hmmm..."
+    Before you can protest she hobbles over to your kitchen, and began rummaging through all your wares. 
+    You contemplate interrupting her, but curiosity gets the best of you. You sit down in your sofa and wait patiently as she cooks. 
+    When she finally emerges, you see that she has a pot of steaming hot soup in her hands. She puts it down on a nearby table. 
+     {ChangeScenery(3)}
     {SetCharacter(false)}
+    "That looks fantastic!" You say, standing up. 
+    She gave you a mischeavous smile with a twinkle in her eyes. "I've always been a very good cook." She says. 
+            {SetCharacter(true)}
+    Before you can compliment her further, she disappears.
+            {SetCharacter(false)}
+    You eagerly dig in to your food, then fall asleep with a full belly. 
 
 *You choose to call Gryla.
 {SetCharacter(true)}
-    Gryla arrived in a huff of smoke. She wrinkled her eyes as she took in your shabby apartment. 
-    "You have such meagre accomodations here," she said, strolling over to one of your chairs and making herself comfortable.
-    "Now, what did you ask me to do?
+    With a huff of smoke Gryla appears in your apartment.
+    As she takes in your living room she wrinkles her nose in disgust.
+    "Such meagre accomodations..." she says, strolling over to one of your chairs and making herself comfortable.
+    She brings her nails up to her face and squints as she examines them. "Speak now, child. Why have you summoned me?"
     **"How good are your cooking skills?"
-        She stared you in the eyes. "I beg your pardon?"
+        She stares you in the eyes. "I beg your pardon?"
     **"I'm really hungry."
-        She said nothing. She fixed you with a steely gaze so severe that you find yourself stumbling the next words. 
+        She says nothing. She fixes you with a steely gaze so severe that you find yourself stumbling your next words. 
     --"I called you because I'm hungry and I was hoping you'd cook."
-    At first she was silent. Then her wrinkled face blushed an angry red. "How dare you waste my time in such a way?" She demanded. 
-    When you didn't answer, she let out a shriek of anger, and vanished herself out of your apartment. 
+    Jutting her nose in the air, she promptly stands up. 
+    "I don't know who you think I am, child, but I am not your mother," she says.
+    "I <i>am</i> the mother of many other children, but you are no wayward child."
+    She takes a step closer towards you. "You're no child, far from it. You may be an unruly adult but the least you could do is cook your own meals."
+    You duck your head at her admonishments. When you look up you realize that she left without saying a goodbye.
     {SetCharacter(false)}
+    You feel guilty for calling her. 
+           {ChangeScenery(2)}
+    Perhaps you should've called another witch. 
+    You end the night by ordering takeout.You order takeout
     
 *You choose to call Pesta.
 {SetCharacter(true)}
-    Pesta entered your apartment hesitantly. She looked around at your belongings with a keen curiousity.
-    "I don't meet mortals too often," she admitted, giving you a small smile. "Why have you summoned me?"
+    As soon as Pesta arrives she looks around your apartment with a keen curiosity.
+    "I don't meet mortals too often," she admits, giving you a shy smile. "Why have you summoned me?" 
     **"How good are your cooking skills?"
-        She looked startled. "Oh! My cooking skills? Not great, I'll admit."
+        She looks startled. "Oh! My cooking skills? Um... I don't know. I don't cook often."
     **"I'm really hungry."
-        "Oh dear, you are? Do you happen to have any food...?"
+        She frowns. "Oh dear, you are? Do you happen to have any food...?"
     --"I called you because I'm hungry and I was hoping you'd cook."
-    She paused. For a second she looked like she was going to say no, then she hung her head in defeat.
-    "I'll give it a try," she said.
-    You lead her to your tiny kitchen. She squeezed in and curiously looked at your cooking utensils.
+    That gives her pause. For a second she looks like she is going to say no, then she hangs her head in defeat.
+    "I... I'll try my best," she says. 
+    You lead her to your tiny kitchen. She squeezes in and curiously looks at your cooking utensils.
     "I wonder if this is anything like brewing potions."
-    You're not even sure what she did, or how it happened, but eventually all your kitchen utensils start melting. 
-    Pesta is sobbing hysterically. "I'm sorry, I'm so sorry, I don't even know how I'm doing this..."
-    She tried to grab a frying pan, and shrieked when the handle melted in her palm. 
-    You quickly intervene. "It's all right, I don't mind," you soothe, though in reality you were grimacing while thinking about the astronomical repair costs. 
-    The night ends with you sending a teary Pesta off with kind assurances, regretting having called her in the first place.
-    {ChangeScenery(2)}
+    The night steadily gets worse from there. Whenever Pesta tries touching an ingredient it dissolves in her hands.
+    Eventually the floor is littering with the rotting leftovers of vegetables and meat. 
+    Pesta is sobbing hysterically. "I'm sorry, I'm so sorry, I don't know how to make it stop."
+    You quickly intervene and began soothing her, assuring her that it's okay.  
+    Then you send her off. She looks at you with wide, teary eyes right before she leaves. "I'm sorry," she says one last time, sniffling. 
     {SetCharacter(false)}
+    Your stomach growls.     {ChangeScenery(2)}
+You order takeout, mulling over your interactions with her.
+Perhaps you should've called another witch. 
 
--The next day. 
+     -The next day. {ChangeScenery(8)}
 
 Day 2
 
-While going out on a walk, you notice signs up for missing cats.
-You have a soft spot for cats, and feel bad that these animals have been separated from their owners.
-You realize that this could be a good opportunity to summon a witch. Perhaps one of them would be able to help find the cats...?
+You have some time before work, so you decide to go on a nice morning walk.
+    {ChangeScenery(10)}
+During it you notice several signs put up for a missing cat.
+    {ChangeScenery(6)}
+You have a soft spot for cats, and feel a pang at the thought of these animals wandering sad and alone. 
+You realize that this can be a good opportunity to summon a witch. Perhaps one of them would be able to help find the cats...?
 
 *You choose to call Diana.
 {SetCharacter(true)}
-    Diana strolled up to you impatiently. "What do you want." she asked. Her cat flicked its tail.
+    {ChangeScenery(10)}
+    Diana strolls up to you impatiently. "What do you want." she asks. Her cat flicks its tail.
     **Do you like cats?
-        She scoffed in indignation. "What do you think?"
+        She cocks an eyebrow. "What do you think?" Her cat mews in agreement. 
     **A lot of cats have been going missing. 
-        Her eyes glazed over. She looked sadly over at some of the missing posters. "Yes, it seems like they have."
+        Her eyes glaze over. She looks sadly over at some of the missing posters. "Yes, it seems like they have."
     --"I called you here because I was hoping you could help find the missing cats, and return them to their owner."
-    She looked stunned. Then her face flushed. "Well. I suppose if it's to find innocent cats, I could spare my time."
+    She looks stunned. Then she fidgets. 
+    "Well, if the purpose is to find lost cats, I suppose I could lend my time," she mumbles.
+    She disappears without another word. 
     {SetCharacter(false)}
-    She snapped her fingers and disappeared. You wait a couple of minutes to see if she would return, and then go about your day.
-    That night you receive a text on your phone. It turns out that she had found all the cats, and returned them to their rightful home.
+    You wait a couple of minutes to see if she would return, and then go about your day, thoroughly confused.
+    Later that night you receive text messages on your phone. 
+        {ChangeScenery(9)}
+    It seems that she not only helped the one cat, she went around and found all the other cats as well. 
+    You go to bed with a smile on your face. 
     
 *You choose to call Baba Yaga.
-    At first there was nothing. Then the ground began shading. Baga Yaga showed up in her giant house, fitted with chicken legs and all. 
+    {ChangeScenery(10)}
+    At first there is no reaction. You wonder if the app glitched. 
+    Then the ground begins shaking.
+    In the distance you see a house running lopsidedly towards you. A house with chicken legs.
     {SetCharacter(true)}
-    She gave you a grunt.
+    Baba Yaga appears to be comandeering the house. "I'm taking it out for a walk," she says, in response to your quizzical look."
     **Do you like cats?
-        She tapped her chin. "They're too chewy for me lately."
+        She taps her chin and hums. "They're too chewy," she says after thinking really hard.
     **A lot of cats have been going missing. 
-        "Oh? I wonder if they're being eaten."
+        She grunts. "Someone's probably eating them."
+        You choose to ignore her disturbing words.
     --"I called you here because I was hoping you could help find the missing cats, and return them to their owner."
-    The witched lolled her head back and forth. Finally she shrugged, "Couldn't hurt to give a try."
+    The witch rolls her shoulders, then shrugs. "Okay."
     {SetCharacter(false)}
-    She gave a quick glance at the posters, and then climbed back into her cabin. The house reared up, and began running lopsidedly through the park.
+    She gives a quick glance at the posters, and then climbs back into her cabin. The house rears all the way up.
+    At first it's still. Then with no warning it begins running through the park. 
     
-    You could hear the witch hollering the names of the cats, and passerby screaming as they tried to avoid the onslaught of chicken legs.
-    Grimacing, your promptly make your way home. Perhaps calling her wasn't such a good idea after all. 
+    You can hear the witch hollering the names of the cats, and passerby screaming as they try to avoid the onslaught of chicken legs.
+    Grimacing, your turn on your heel make your way home. In hindsight, calling her was a bad idea. 
 
 
-*You chooseI chose to call Gryla.
+*You choose to call Gryla.
 {SetCharacter(true)}
-    The imposing woman bore down on you the second she arrived. "What do you want?"
+    {ChangeScenery(10)}
+
+    The imposing woman bears down on you the second she arrives. 
+    "What do you want?" she asks, scowling. 
     **Do you like cats?
         Her face flickered with confusion. "Cats? I feel nothing one way or another."
     **A lot of cats have been going missing. 
         "Oh. I see."
     --"I called you here because I was hoping you could help find the missing cats, and return them to their owner."
-    She appeared deep in thought. "I appreciate that you tried to enlist my help for... this."
-    "However, it's not my responsibility." She shook her head. "I have Yule Lads to look after."
+    She appears deep in thought. "I appreciate you wanting to help these animals," she says at last.
+    "But it's not my responsibility, nor do I know the first thing about finding these creatures." 
+    She grabs one of the signs and examines it closely.
+    "I'll tell my children to keep an eye out," she says, putting the sign back.
+    She leaves without another word. After a while you also turn back. 
+    
     {SetCharacter(false)}
-    She promptly left without another word. 
+    You don't receive any other information from her.
+    You assume that she isn't able to find the cats. 
     
 *You choose to call Pesta.
 {SetCharacter(true)}
-    Pesta nervously hobbled over to you. As she did so, the grass near her feet slowly withered in her wake.
-    She gave you a cheery wave. "Hello!"
+    {ChangeScenery(10)}
+    Pesta appears right next to you, making you jump. The grass at her feet wither.
+    "Hello!" she hums. 
     **Do you like cats?
-        She cocked her head. "I suppose. Could never get close to them though." She shifted her feet sadly. 
+        She cocks her head. "I suppose. Could never get close to them though." She shifts her feet. 
     **A lot of cats have been going missing. 
-        Her eyes were wide. "Oh no, that's horrible!"
+        Her eyes become wide. "Oh no, that's horrible!"
     --"I called you here because I was hoping you could help find the missing cats, and return them to their owner."
-        She opened and closed her mouth several times, and then grimaced. 
+        She opens and closes her mouth several times, then grimances. 
         "I'm sorry, I don't think that's a good idea. I think I'd melt the cats." 
-        {SetCharacter(false)}
-        You give a sympathetic nod. She turned around and walked back, the withered grass disintigrating with each of her steps. 
+        You give her a sympathetic nod, and thank her for hearing your request.
+        With a pop she was gone, leaving a trail of smoldering grass in her wake.
+                {SetCharacter(false)}
+        You examine the missing cat posters again. The more you think about it, the more you doubt any of the witches could really be of any help. 
+        You leave the park, deep in thought. 
 
--The next day. 
+-The next day. {ChangeScenery(8)}
+
 
 Day 3
 
-Today is your day off. You eagerly wake up and head over to your balcony garden, happy to give your plants some love and care.
-To your horror, you see that the plants were horribly overgrown. 
-Your balcony looked like a jungle, and some of the floor was cracked under the weight.
-This isn't a situation you can handle. You have to call a witch. 
+Today is your day off. You eagerly wake up and head over to your balcony garden, eager to look over your plants.
+To your horror, you see that the entire thing is overgrown.
+{ChangeScenery(11)}
+It looks like a jungle took root and grew overnight. 
+You know right away that this isn't a situation you can handle. You have to call a witch. 
 
 *You choose to call Diana.
 {SetCharacter(true)}
-    Diana looked at you suspiciously. When you let her to your garden her eyes widened.
-    "Your garden is cursed! Who have you angered?"
+    Diana appears next to you. She gives you a suspicious look, then at the sight of your plants her eyes widen.
+    "Your garden is cursed! Foolish girl, who have you angered?"
     **"I don't know who caused this."
-        She tutted under her breath. 
+        She tuts under her breath. "That won't make this any easier."
     **"No one has any reason to curse me."
-        She gave a snort.
+        She gives a snort.
     --"Do you think you can fix this?"
-    Diana massaged her temples. "Ugh. No, I don't think I can. I'll give it a try anyways."
-    The witch began her spellwork. You didn't know what she was doing, but whatever it was involved lots of cats and dancing. 
-    When she finished she looked at you with a frustrated gleam in her eyes. "It didn't work." She said flatly.
+    Diana massages her temples. "Ugh. No, I don't think I can. I'll give it a try anyways."
+    The witch begins her spellwork. One by one cats appear in your apartment with a <i>pop</i>. 
+    They ignore you and make a beeline for the witch, forming a circle around her and mewling in tune with her chanting. 
+    When she is finished she takes a breath. She looks at your garden--still very overgrown--and then at you with a frustrated gleam in her eyes. 
+    "It didn't work," she says flatly.
+    You feel tired. "That's ok," you say weakly. It's getting late, and you want to be left alone. 
+    She doesn't say anything further, just snaps her finger and then she, along with the cats, are gone.
     {SetCharacter(false)}
-    Before you could apologize for wasting her time, she strutted out of your apartment. 
+    You walk over to your plants and grimace at the sight. Maybe someone else would've been able to help.
+    You put it out of mind for now and go to bed. 
     
 *You choose to call Baba Yaga.
 {SetCharacter(true)}
-    The old witch looks unhappy to see you. "What?" She spat.
-    You gestured towards your balcony. She hobbled towards it, and hummed as she stared at it with squinted eyes. 
+    The old witch looks unhappy to be in the apartment. "Whatdya want?" she asks, scratching her back.
+    You gesture towards your balcony. She hobbles towards it, and hums as she stares at it with squinted eyes. 
      **"I don't know who caused this."
-        "Neither do I," she said. 
+        "That's makes two of us."
     **"No one has any reason to curse me."
-        She rolled her bony shoulders. "They wouldn't need one."
+        She scratches her chin. "They don't need one! Some like cursing for fun." She cackles. 
     --"Do you think you can fix this?"
-    The witch rubbed her hands together. "We'll see."
-    She began waving her hands wildly in the air, muttering under her breath as she did so. 
-    You sat down in your couch and watched her, patiently waiting for her spell to work.
-    It didn't. The old witch didn't even bother telling you as much. 
+    The witch rubs her hands together. "Maybe. Dunno."
+    She begins her spell work. She waves her hands wildly in the air while muttering under her breath. 
+    Sometimes she leaps across the room, making wild gestures to seemingly no one. 
+    Intrigued by the sight, you sit down on a couch and watch her work. 
+    When she finally stops, she is panting. Shaking her head, she says, "Didn't work."
+    Without saying anything further, she disappears.
     {SetCharacter(false)}
-    She just sighed, shook her head, and walked out of your apartment, leaving you gaping in disbelief.
+    You're still gaping at the spot where she just was. Then you curse your luck.
+    You place a hand on your forehead. You can feel a migraine coming. Deciding to deal with this problem later, you head off to bed. 
 
 
 *You choose to call Gryla.
 {SetCharacter(true)}
-    The witch showed up disgruntled. "There better be a reason for this disturbance, child."
-    You explained your situation to her as you took her over to your balcony. She eyed the plants with distaste.
+    The witch shows up disgruntled. "There better be a reason for this disturbance, child."
+    You explain your situation to her as you take her over to your balcony. She eyes the plants with distaste.
      **"I don't know who caused this."
-        She sighed. "This would have been an easier problem to solve if you did."
+        She sighs. "This would have been an easier problem to solve if you did."
     **"No one has any reason to curse me."
-        She cocked an eyebrow. "This doesn't look like something caused out of no reason. But, perhaps, if a stray spell went awry..."
+        She cocks an eyebrow. "This doesn't look like something caused out of no reason. But, perhaps, if a stray spell went awry..."
     --"Do you think you can fix this?
-        She pursed her lips. "I suppose I can try."
-        She put two fingers in her mouth and whistled. You heard the sound of laughter, following by objects in your apartment koncked over. 
-        Gryla explained to you that her children were trying to rip apart the vines. But to no avail--everytime one was ripped off, another grew back in its place. 
+        She purses her lips. "I suppose I can try."
+        She puts two fingers in her mouth and whistles. You hear the sound of laughter, following by objects in your apartment getting knocked over.
+        Then you see the vines thrashing about.
+        Gryla explains to you that her children are trying to rip apart the vines. But to no avail--everytime one gets ripped off, another grows back in its place. 
         Finally she turns to you and says, "I'm sorry, I don't think it can be done."
+        You give a curt nod, and say your goodbyes as she and her multitudes of children leave.       
         {SetCharacter(false)}
-        You gave a curt nod, and say your goodbyes as she and her multitudes of children leave. 
+        Placing your hands on your hips, you sigh and stare at your once beloved garden.
+        You decide to sleep away your worries. 
+        
         
 *You choose to call Pesta.
 {SetCharacter(true)}
-    Pesta arrived in a hurry, her eyes wide in surprise. "What's wrong??" She asked.
-    You took her to your balcony, where she assessed the damage.
+    Pesta arrives right away, her eyes wide in surprise. "What's wrong??" She asks.
+    You take her to your balcony. She "ooohed" at the sight of the plants.
      **"I don't know who caused this."
-        The witch frowned and shook her head. "It may've been no one."
+        "Sometimes no one causes things like this," she says, examining the plants further. "Sometimes it just happens"
     **"No one has any reason to curse me."
-        Pesta gave a small smile. "No, I don't think they would."
+        Pesta gives a small smile. "I don't see why anyone would want to curse you."
     --"Do you think you can fix this?"
-        "I... I think so." Hesitantly she began working on your garden.
-        She touched all the plants one by one, and they slowly rotted from the inside, and deteriorated.
-        Eventually they were all gone. Pesta beamed at her handiwork. "There!"
+         She hesitates. "I suppose I can try..."
+        She touches all the plants one by one. They slowly decay, and then deteriorate.
+        It takes a while, but eventually she gets through all the plants. 
+        Pesta beams at her handiwork. "There!" she says.
+        All your plants are gone, reduced to heaps of dust. But you feel happy that your balcony is cleared. You return her smile. 
+        Pesta says her goodbyes, and leaves.
         {SetCharacter(false)}
-        "Thank you!" You said, smiling back at her. She bid adeau and left. 
-    
-    -The next day. 
+        It's well into the day, and you suddenly feel exhausted. You return to you room to sleep. 
+
+-The next day. {ChangeScenery(9)}
 
 Day 4
 
-The next night you awoken to the sound of a large bang. Grumbling you push yourself out of your bed and head over to your living room.
-In shock, you realize that everything has been flung over. Dishes were floating in the air, poised to crash any minute. 
-This was definitely an emergency. You quickly whip out your phone, and get ready to call. 
+The next night you awake to the sound of a large bang. Grumbling you push yourself out of your bed and head over to your living room.
+In shock, you realize that everything has been flung over. Your furniture is floating in the air, poised to crash any minute.
+{ActivatePoltergeist(true)}
+This is an emergency. You quickly whip out your phone, and get ready to call. 
 
 *You choose to call Diana.
 {SetCharacter(true)}
-    Diana arrived, looking annoyed. Her cat was still deep asleep on her shoulders.
-    "What is the meaning of thi--" she gave a pause when she noticed the flying objects.
+    Diana arrives, looking annoyed. Her cat is deep asleep on her shoulders.
+    "What is the meaning of thi--" she freezes when she notices the flying objects.
      **"What's going on?!"
-        Diana sucked in her breath. "Poltergeists."
+        Diana sucks in her breath. "Poltergeists."
     **"Do you know how to stop this?"
-        Diana stuttered. "I... I'm not sure."
+        Diana stutters. "I... I'm not sure."
     --"Please help me!"
-    "Okay, okay, I'll try," she said. 
-    And tried she did. She summoned her cats and channeled the full power of the moon, but nothing seemed to be working.
-    Eventually the poltergeist stopped smashing everything. She looked at you, wide-eyed.
+    "Okay, okay, I'll try," she says. 
+    She begins her spellwork. You can't tell what she's doing, but it doesn't seem to lessen the onslaught of the poltergeist. 
+    Eventually it stops when morning strikes. She looks at you, wide-eyed
+    {ActivatePoltergeist(false)}
     "I'm sorry, I did all I could."
+    You thank her for her time, and say your goodbyes.
     {SetCharacter(false)}
-    You thanked her for her time, and bid her adeau, looking around your house with unabashed misery. 
-    
+    You look around your mess of an apartment in misery. 
+
     
 *You choose to call Baba Yaga.
 {SetCharacter(true)}
     When the old hag finally arrives, it's almost dawn.
-    She looked like she was going to curse you out, but when her eyes alighted on the mess she gaped.
+    She looks annoyed to be here. "Whadya want?" she asks, shuffling her feet. 
+    Then she takes notice of the flying furniture. "Oh. That's what. 
   **"What's going on?!"
-        "Kid, I got no clue."
+        "I got no clue."
     **"Do you know how to stop this?"
         "How should I know?"
     --"Please help me!"
-    She scratched her chin. "Have you tried making yourself a meal? That usually calms me down."
+    She scratches her chin. "You know what. I'll make some food. That usually helps."
+    You assume she means food for you, but to your surprise she disappears.
     {SetCharacter(false)}
-    You let out a puff of anger and kick her out, cursing the waste of time. 
+    You let out a grunt of frustration and make your way to your room, barring the door shut and hiding under the blanket. 
+    Eventually the sound of the poltergeist wreaking havoc dies down, and you're able to get a small burst of sleep. 
+    {ActivatePoltergeist(false)}
 
 *You choose to call Gryla.
 {SetCharacter(true)}
-    Gryla arrives and looks around your apartment suspiciously. "What is..." she paused at the sight of the flying objects. "Oh."
+    Gryla arrives and looks around your apartment suspiciously. "What is..." she pauses at the sight of the flying objects. "Oh."
     **"What's going on?!"
         "It's a poltergeist, child."
     **"Do you know how to stop this?"
-        She gave a grim smile. "Luckily for you, I do."
+        She gives a grim smile. "Luckily for you, I do."
     --"Please help me!"
-    Gryla told you to return to your room. 
-    As you did, you hear her talking with the poltergeist in question--they talked well past the point you fell asleep.
+    Gryla tells you to return to your room. 
+    As you do so, you hear her talking with the poltergeist in question--they talk well past the point you fell asleep.
+    {ActivatePoltergeist(false)}
     When you wake up and return to your living room you see that everything has been returned to normal. 
     If it hadn't been for Gryla's text message saying that she took care of the problem, you would've thought it was a dream.
     
 *You choose to call Pesta.
-    Pesta nervously looked into your apartment, and gasped at the sight of the mess.
+    Pesta arrives and nervously looks around your apartment, gasping at the sight of the mess.
     **"What's going on?!"
-        "A malignant spirit!" She said excitedly. "Oh, but I don't know what kind."
+        "A malignant spirit!" She says excitedly. "Oh, but I don't know what kind."
     **"Do you know how to stop this?"
         "I... I don't think so."
     --"Please help me!"
-    "Well, I'll try..." She said as she rushed in. 
-    It was no use. She tried fixing your problems, but instead she melted all the destroyed items.
-    In your frustration, you told her to leave. She squealed and apologized, and ran out.
+    "Well, I'll try..." She says. 
+    She begins by trying to reason with the spirit. She melts some of the objects it tries to throw in an effort to lessen some of the damage.
+    Nothing is working. It's still breaking things in your apartment, until finally morning struck, and it is gone. 
+        {ActivatePoltergeist(false)}
+    Pesta keeps apologizing. "I'm so sorry, I should've been better, I should've..."
+    You interrupt her apology and say that it's okay. She looks at you tearfully and nods.
+    The two of you say your goodbyes.
     {SetCharacter(false)}
-    The poltergeist left when it got bored. In exhaustion, you head to your bedroom.
+    You're exhausted. Even though it's morning you walk back to your bedroom, and crawl into bed. 
 
-  -The next day. 
+-The next day. {ChangeScenery(8)}
 
-Ending
+Placeholder Ending
 You tell the company your complaints with the app. Primarily that it wasn't clear at all what the witches were willing to do.
 
 Turns out that among the testers you were one of the lucky ones. Many others have met a harsher fate by crossing the line with these witches. The company decides not to realize the app after all. In hindsight, it really doesn't seem like a good idea. 
+
 
 
 -->END
