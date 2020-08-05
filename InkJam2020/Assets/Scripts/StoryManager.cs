@@ -14,15 +14,18 @@ public class StoryManager : MonoBehaviour
     [SerializeField]
     private Text storyText;
 
-    [SerializeField]
-    private GameObject phoneLocked, gameplayCover, poltergeist;
+    [SerializeField] //ui specific
+    private GameObject phoneLocked, gameplayCover, btnContinue, swipeToUnlock;
+    [SerializeField] //story specific
+    private GameObject poltergeist;
+
     [SerializeField]
     private GameObject[] speechChoices;
 
     [SerializeField]
-    private RawImage character, scenery;
+    private RawImage character, scenery, timeOfDay;
     [SerializeField]
-    private Texture[] characters;
+    private Texture[] characters, times; //daytime is 0, nighttime is 1
 
     [SerializeField]
     private Texture[] sceneries;
@@ -54,6 +57,11 @@ public class StoryManager : MonoBehaviour
         story.BindExternalFunction("CalculateEndering", () =>
         {
             CalculateEnding();
+        });
+
+        story.BindExternalFunction("SetTime", (int index) =>
+        {
+            SetTime(index);
         });
 
         story.BindExternalFunction("ActivatePoltergeist", (bool temp) =>
@@ -94,6 +102,8 @@ public class StoryManager : MonoBehaviour
     public void LockPhone(bool temp)
     {
         phoneLocked.SetActive(temp);
+        btnContinue.SetActive(temp);
+        swipeToUnlock.SetActive(!temp);
         gameplayCover.SetActive(!temp);
     }
 
@@ -138,5 +148,10 @@ public class StoryManager : MonoBehaviour
     {
         scenery.texture = sceneries[0];
         poltergeist.SetActive(temp);
+    }
+
+    private void SetTime(int index)
+    {
+        timeOfDay.texture = times[index];
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PhoneGeneral : MonoBehaviour
 {
     [SerializeField]
-    private GameObject lockScreen, homeScreen, appScreen, grayBlock;
+    private GameObject lockScreen, homeScreen, appScreen;
 
     //Singleton
     public static PhoneGeneral instance;
@@ -37,7 +37,6 @@ public class PhoneGeneral : MonoBehaviour
     public void SwitchToStory()
     {
         ChangeScreens(true, false, false);
-        grayBlock.SetActive(true);
     }
 
 }

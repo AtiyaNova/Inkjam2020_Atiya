@@ -2,14 +2,16 @@ EXTERNAL SetCharacter(active)
 EXTERNAL ChangeScenery(index)
 EXTERNAL CalculateEndering()
 EXTERNAL ActivatePoltergeist(temp)
+EXTERNAL SetTime(index)
 
 You've been hired to test out an experimental app called “Witch Helpers” before its release. The purpose of this app is to allow the user to summon a witch of their choosing in their time of need. 
 
 You've been given a trial version to test out for a handful of days, and then give the developers feedback. You can already tell that the app has some issues, as it’s not very clear what kind of tasks the witches are up to. It seems you'll have to figure that out yourself. 
 
 Day 1
-    {ChangeScenery(9)}
+    {SetTime(1)}
 You've been at work all day, and by the time you arrive home you realize that you feel too tired to cook food. You <i>could</i> go out and pick something up, though you can't help but wonder if giving one of the witches a call wouldn't be a better option... 
+    {ChangeScenery(9)}
 You unlock your phone. 
     {ChangeScenery(0)}
 
@@ -101,7 +103,7 @@ Perhaps you should've called another witch.
      -The next day. {ChangeScenery(8)}
 
 Day 2
-
+    {SetTime(0)}
 You have some time before work, so you decide to go on a nice morning walk.
     {ChangeScenery(10)}
 During it you notice several signs put up for a missing cat.
@@ -193,7 +195,7 @@ You realize that this can be a good opportunity to summon a witch. Perhaps one o
 
 
 Day 3
-
+    {SetTime(0)}
 Today is your day off. You eagerly wake up and head over to your balcony garden, eager to look over your plants.
 To your horror, you see that the entire thing is overgrown.
 {ChangeScenery(11)}
@@ -281,6 +283,7 @@ You know right away that this isn't a situation you can handle. You have to call
 -The next day. {ChangeScenery(9)}
 
 Day 4
+    {SetTime(1)}
 
 The next night you awake to the sound of a large bang. Grumbling you push yourself out of your bed and head over to your living room.
 In shock, you realize that everything has been flung over. Your furniture is floating in the air, poised to crash any minute.
@@ -355,6 +358,7 @@ This is an emergency. You quickly whip out your phone, and get ready to call.
     You're exhausted. Even though it's morning you walk back to your bedroom, and crawl into bed. 
 
 -The next day. {ChangeScenery(8)}
+    {SetTime(0)}
 
 Placeholder Ending
 You tell the company your complaints with the app. Primarily that it wasn't clear at all what the witches were willing to do.

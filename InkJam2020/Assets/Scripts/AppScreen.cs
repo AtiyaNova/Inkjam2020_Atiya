@@ -13,7 +13,7 @@ public class AppScreen : MonoBehaviour
     [SerializeField]
     RawImage pfp;
     [SerializeField]
-    Text description;
+    Text description, name;
     [SerializeField]
     private GalleryIcon[] galleryIcons;
 
@@ -49,6 +49,7 @@ public class AppScreen : MonoBehaviour
         currentWitch = witch.theWitch;
         pfp.texture = currentWitch.GetPfp();
         description.text = currentWitch.GetDescription();
+        name.text = currentWitch.GetName();
 
         for (int i = 0; i < galleryIcons.Length; i++)
         {
