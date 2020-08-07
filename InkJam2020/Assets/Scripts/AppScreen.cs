@@ -53,7 +53,7 @@ public class AppScreen : MonoBehaviour
 
         for (int i = 0; i < galleryIcons.Length; i++)
         {
-            galleryIcons[i].SetImages(currentWitch.GetThumbnail(i), currentWitch.GetExpanded(i), currentWitch.GetGalleryDesc(i));
+            galleryIcons[i].SetImages(currentWitch,i);
         }
 
         mainScreen.SetActive(false);
@@ -83,9 +83,9 @@ public class AppScreen : MonoBehaviour
         StoryManager.instance.PickWitch(currentWitch.GetChoice());
     }
 
-    public void ExpandImage(Texture image, string theText)
+    public void ExpandImage(GalleryIcon theIcon)
     {
-        expandImage.Open(image, theText);
+        expandImage.Open(theIcon);
     }
 
 }

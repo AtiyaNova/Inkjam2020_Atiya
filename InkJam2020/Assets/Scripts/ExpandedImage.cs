@@ -8,15 +8,18 @@ public class ExpandedImage : MonoBehaviour
        , IPointerClickHandler
 {
     [SerializeField]
-    private RawImage image;
+    private RawImage image, icon;
     [SerializeField]
-    private Text desc;
+    private Text desc, witchName, time;
 
-    public void Open(Texture newText, string newDesc)
+    public void Open(GalleryIcon galleryIcon)
     {
         gameObject.SetActive(true);
-        image.texture = newText;
-        desc.text = newDesc;
+        image.texture = galleryIcon.full;
+        desc.text = galleryIcon.desc;
+        witchName.text = galleryIcon.gName;
+        time.text = galleryIcon.time;
+        icon.texture = galleryIcon.fullIcon;
     }
 
     public void Close()

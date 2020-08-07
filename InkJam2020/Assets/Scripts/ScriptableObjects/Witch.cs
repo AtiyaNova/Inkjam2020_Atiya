@@ -7,7 +7,7 @@ using UnityEngine;
 public class Witch : ScriptableObject
 {
     [SerializeField]
-    private string witchName, pfDesc;
+    private string witchName, pfDesc, pTime;
 
     [SerializeField]
     private Texture pfp;
@@ -30,6 +30,11 @@ public class Witch : ScriptableObject
     public string GetName()
     {
         return witchName;
+    }
+
+    public string GetPostTime()
+    {
+        return pTime;
     }
 
     public string GetDescription()

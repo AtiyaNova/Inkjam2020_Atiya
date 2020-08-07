@@ -77,6 +77,12 @@ public class StoryManager : MonoBehaviour
         ContinueStory();
     }
 
+    //this is just for exiting the game
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
+    }
+
     public void ContinueStory()
     {
         if (story.canContinue) storyText.text = story.Continue();

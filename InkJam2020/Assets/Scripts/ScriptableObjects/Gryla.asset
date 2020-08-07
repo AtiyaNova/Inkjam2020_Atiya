@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   witchName: Gryla
   pfDesc: Proud mother of dozens of Yule Lads.
+  pTime: Posted 22h ago
   pfp: {fileID: 2800000, guid: 27c27bd7370abec47bf3ed62f891f0ae, type: 3}
   choiceNum: 2
   thumbnails:
@@ -25,6 +26,6 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 3915926ac68fa244f93d298bdcb1e772, type: 3}
   - {fileID: 2800000, guid: 87554192917933649947ee3fa33cad97, type: 3}
   galleryDesc:
-  - 'Look at my lovely yule children. #proudmom'
+  - Look at my lovely yule children. #proudmom
   - Good thing I don't need this anymore...
   - '#FavoriteHoliday'

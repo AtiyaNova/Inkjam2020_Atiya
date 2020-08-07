@@ -9,12 +9,11 @@ public class GalleryIcon : MonoBehaviour
     , IPointerEnterHandler
     , IPointerExitHandler
 {
-    [SerializeField]
-    private Texture thumbnail, full;
+    public Texture thumbnail, full, fullIcon;
     public RawImage icon;
     private Color orig, highlight;
-    private int index = 0;
-    private string desc;
+    public int index = 0;
+    public string desc, gName, time;
 
     private void Start()
     {
@@ -27,17 +26,20 @@ public class GalleryIcon : MonoBehaviour
         index = i;
     }
 
-    public void SetImages(Texture img1, Texture img2, string desc2)
+    public void SetImages(Witch theWitch, int index)
     {
-        thumbnail = img1;
-        full = img2;
+        thumbnail = theWitch.GetThumbnail(index);
+        full = theWitch.GetExpanded(index);
         icon.texture = thumbnail;
-        desc = desc2;
+        desc = theWitch.GetGalleryDesc(index);
+        gName = theWitch.GetName();
+        time = theWitch.GetPostTime();
+        fullIcon = theWitch.GetPfp(); 
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        AppScreen.instance.ExpandImage(full, desc);
+        AppScreen.instance.ExpandImage(this);
         icon.color = orig;
     }
 
