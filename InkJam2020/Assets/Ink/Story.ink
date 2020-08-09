@@ -359,12 +359,28 @@ This is an emergency. You quickly whip out your phone, and get ready to call.
 
 -The next day. {ChangeScenery(8)}
     {SetTime(0)}
+    ->BestEnding
 
-Placeholder Ending
+==BestEnding==
 You tell the company your complaints with the app. Primarily that it wasn't clear at all what the witches were willing to do.
 
 Turns out that among the testers you were one of the lucky ones. Many others have met a harsher fate by crossing the line with these witches. The company decides not to realize the app after all. In hindsight, it really doesn't seem like a good idea. 
+->DONE 
 
+==WorstEnding==
+You have a plethora of angry complaints that you hand over to the company.
 
+You tell them that your appartment is in ruins, that you've had a very stressful handful of days, and that calling the witches at times was more trouble than it was worth!
+
+Not to mention that you couldn't tell what they were willing to do half the time.
+
+The company apologizes profusely and tells you that they were planning on scrapping the app all together. Turns out you weren't the only one with a negative experience.
+->DONE
+
+==MixedEnding==
+You aren't sure how to feel about the app. You tell the company as much when you report to them, and say that as much as it could have its uses, it can also backfire if you don't pick correctly. 
+
+The company lets you know that they were thinking of scrapping the app altogether due to numerous complaints from other testers. You understand the frustrations completely.
+->DONE
 
 -->END

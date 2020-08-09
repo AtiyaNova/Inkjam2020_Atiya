@@ -34,6 +34,8 @@ public class StoryManager : MonoBehaviour
     public static StoryManager instance;
 
     private int witchAmount = 3;
+    private float fadeTime = 0.1f;
+    private Color origCharColor;
 
     void Awake()
     {
@@ -71,10 +73,14 @@ public class StoryManager : MonoBehaviour
 
 
         for (int i = 0; i < speechChoices.Length; i++) speechChoices[i].SetActive(false);
-        character.gameObject.SetActive(false);
         poltergeist.SetActive(false);
         LockPhone(true);
         ContinueStory();
+
+        //for aesthetics
+        origCharColor = character.color;
+        character.color = Color.clear;
+
     }
 
     //this is just for exiting the game
@@ -133,11 +139,42 @@ public class StoryManager : MonoBehaviour
 
     }
 
-    
-
     private void SetCharacter(bool temp)
     {
-        character.gameObject.SetActive(temp);
+        if (temp && !CharacterFadedIn())
+        {
+            StartCoroutine(FadeInCharacter());
+        }
+        else if (!temp && CharacterFadedIn())
+        {
+            StartCoroutine(FadeOutCharacter());
+
+        }
+    }
+
+    private IEnumerator FadeInCharacter()
+    {
+        for (float t = 0.01f; t < fadeTime; t += Time.deltaTime)
+        {
+            character.color = Color.Lerp(Color.clear, origCharColor, Mathf.Min(1, t / fadeTime));
+            yield return null;
+        }
+        character.color = origCharColor;
+    }
+
+    private IEnumerator FadeOutCharacter()
+    {
+        for (float t = 0.01f; t < fadeTime; t += Time.deltaTime)
+        {
+            character.color = Color.Lerp(origCharColor, Color.clear, Mathf.Min(1, t / fadeTime));
+            yield return null;
+        }
+        character.color = Color.clear;
+    }
+
+    private bool CharacterFadedIn()
+    {
+        return character.color == origCharColor ? true : false;
     }
 
     private void ChangeScenery(int i)

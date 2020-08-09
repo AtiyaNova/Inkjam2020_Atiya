@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\PhoneGeneral.cs" />
     <Compile Include="Assets\Scripts\GalleryIcon.cs" />
     <Compile Include="Assets\Scripts\CardTemplate.cs" />
+    <Compile Include="Assets\Scripts\SoundManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

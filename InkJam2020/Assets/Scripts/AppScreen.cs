@@ -42,6 +42,7 @@ public class AppScreen : MonoBehaviour
         profileScreen.SetActive(false);
         confirmCall.SetActive(false);
         expandImage.Close();
+        SoundManager.instance.PlayClick();
     }
 
     public void TravelToProfile(CardTemplate witch)
