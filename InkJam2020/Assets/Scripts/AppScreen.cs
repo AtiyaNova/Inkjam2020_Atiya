@@ -80,8 +80,7 @@ public class AppScreen : MonoBehaviour
     public void Call()
     {
         GoBack();
-        PhoneGeneral.instance.SwitchToStory();
-        StoryManager.instance.PickWitch(currentWitch.GetChoice());
+        CallAnimation.instance.StartCall(currentWitch.GetChoice());
     }
 
     public void ExpandImage(GalleryIcon theIcon)

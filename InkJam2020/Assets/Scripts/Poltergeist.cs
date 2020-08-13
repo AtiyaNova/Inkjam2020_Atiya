@@ -5,8 +5,13 @@ using UnityEngine;
 public class Poltergeist : MonoBehaviour
 {
     [SerializeField]
-    private float floatVal = 0.1f, addedY = 0.1f;
-        
+    private float floatVal = 0.1f;
+    private float addedY = 0.1f;
+
+    private void Start()
+    {
+        addedY = transform.position.y;
+    }
 
     // Update is called once per frame
     void Update()

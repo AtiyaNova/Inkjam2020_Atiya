@@ -12,7 +12,7 @@ public class StoryManager : MonoBehaviour
     private Story story;
 
     [SerializeField]
-    private Text storyText;
+    private Text storyText, dayTest;
 
     [SerializeField] //ui specific
     private GameObject phoneLocked, gameplayCover, btnContinue, swipeToUnlock;
@@ -61,6 +61,13 @@ public class StoryManager : MonoBehaviour
             CalculateEnding();
         });
 
+
+        story.BindExternalFunction("ProgressDay", (int num) =>
+        {
+            ProgressDay(num);
+        });
+
+
         story.BindExternalFunction("SetTime", (int index) =>
         {
             SetTime(index);
@@ -82,6 +89,7 @@ public class StoryManager : MonoBehaviour
         character.color = Color.clear;
 
     }
+
 
     //this is just for exiting the game
     public void Update()
@@ -196,5 +204,10 @@ public class StoryManager : MonoBehaviour
     private void SetTime(int index)
     {
         timeOfDay.texture = times[index];
+    }
+
+    private void ProgressDay(int num)
+    {
+        dayTest.text = "DAY " + num;
     }
 }
