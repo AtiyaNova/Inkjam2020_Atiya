@@ -23,9 +23,11 @@ public class StoryManager : MonoBehaviour
     private GameObject[] speechChoices;
 
     [SerializeField]
-    private RawImage character, scenery, timeOfDay;
+    private RawImage character, scenery, timeOfDay, message;
     [SerializeField]
-    private Texture[] characters, times; //daytime is 0, nighttime is 1
+    private Texture[] times; //daytime is 0, nighttime is 1
+    [SerializeField]
+    private Texture[] diana, babaYaga, gryla, pesta;
 
     [SerializeField]
     private Texture[] sceneries;
@@ -33,7 +35,9 @@ public class StoryManager : MonoBehaviour
     //Singleton
     public static StoryManager instance;
 
-    private int witchAmount = 3;
+    private int witchAmount = 4, witchChoice, storyChoice = 0;
+    private int[] correctChoices = {1,0,3,2};
+    private List<int> playerChoices;
     private float fadeTime = 0.1f;
     private Color origCharColor;
 
@@ -56,9 +60,9 @@ public class StoryManager : MonoBehaviour
             ChangeScenery(index);
         });
 
-        story.BindExternalFunction("CalculateEndering", () =>
+        story.BindExternalFunction("DisplayMessage", () =>
         {
-            CalculateEnding();
+            DisplayTextMessage();
         });
 
 
@@ -78,6 +82,11 @@ public class StoryManager : MonoBehaviour
             ActivatePoltergeist(temp);
         });
 
+        story.BindExternalFunction("SetWitchExpression", (int index) =>
+        {
+            SetWitchExpression(index);
+        });
+
 
         for (int i = 0; i < speechChoices.Length; i++) speechChoices[i].SetActive(false);
         poltergeist.SetActive(false);
@@ -87,7 +96,7 @@ public class StoryManager : MonoBehaviour
         //for aesthetics
         origCharColor = character.color;
         character.color = Color.clear;
-
+        playerChoices = new List<int>();
     }
 
 
@@ -102,16 +111,23 @@ public class StoryManager : MonoBehaviour
         if (story.canContinue) storyText.text = story.Continue();
         else
         {
-            if (story.currentChoices.Count >= witchAmount)
+            if (story.currentChoices.Count == witchAmount)
+            {
                 LockPhone(false);
-            else if (story.currentChoices.Count > 0)
+            }
+            else if (story.currentChoices.Count == 3)
+            {
+                 CalculateStoryChoice();
+            }
+            else if (story.currentChoices.Count == 2)
+            {
                 ShowSpeechChoice();
+            }
         }
     }
 
     public void ShowSpeechChoice()
     {
-        print(story.currentChoices.Count);
         for (int i = 0; i < speechChoices.Length; i++)
         {
             speechChoices[i].SetActive(true);
@@ -131,7 +147,9 @@ public class StoryManager : MonoBehaviour
     {
         story.ChooseChoiceIndex(choice);
         character.gameObject.SetActive(true);
-        character.texture = characters[choice];
+        witchChoice = choice;
+        character.texture = GetCharacterTexture(witchChoice, 0);
+        playerChoices.Add(choice);
         LockPhone(true);
         ContinueStory();
     }
@@ -157,6 +175,23 @@ public class StoryManager : MonoBehaviour
         {
             StartCoroutine(FadeOutCharacter());
 
+        }
+    }
+
+    private Texture GetCharacterTexture(int choice, int expression)
+    {
+        switch (choice)
+        {
+            case 0:
+                return diana[expression];
+            case 1:
+                return babaYaga[expression];
+            case 2:
+                return gryla[expression];
+
+            default:
+                return pesta[expression];
+                
         }
     }
 
@@ -187,12 +222,32 @@ public class StoryManager : MonoBehaviour
 
     private void ChangeScenery(int i)
     {
+        print("it gets called");
         scenery.texture = sceneries[i];
+    }
+
+    private void CalculateStoryChoice()
+    {
+        int wrongChoices = 0;
+
+        for (int i = 0; i < correctChoices.Length; i++)
+        {
+            if (playerChoices[i] != correctChoices[i])
+            {
+                wrongChoices++;
+            }
+        }
+
+        if (wrongChoices >= 4) storyChoice = 2; //worst ending
+        else if (wrongChoices > 0) storyChoice = 1; //mixed ending\
+
+        CalculateEnding();
     }
 
     private void CalculateEnding()
     {
-
+        story.ChooseChoiceIndex(storyChoice);
+        ContinueStory();
     }
 
     private void ActivatePoltergeist(bool temp)
@@ -209,5 +264,32 @@ public class StoryManager : MonoBehaviour
     private void ProgressDay(int num)
     {
         dayTest.text = "DAY " + num;
+    }
+
+    private void SetWitchExpression(int expression)
+    {
+        character.texture = GetCharacterTexture(witchChoice, expression);
+    }
+
+    private void DisplayTextMessage()
+    {
+        SoundManager.instance.PlayTextMsg();
+        StartCoroutine(DisplayText());
+    }
+
+    //make this cleaner
+    private IEnumerator DisplayText()
+    {
+        message.gameObject.SetActive(true);
+        SoundManager.instance.PlayTextMsg();
+        float msgTimer = 0, maxAmount = 3;
+
+        while (msgTimer < maxAmount)
+        {
+            msgTimer += Time.deltaTime;
+            yield return null;
+        }
+
+        message.gameObject.SetActive(false);
     }
 }

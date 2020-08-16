@@ -47,6 +47,7 @@ public class AppScreen : MonoBehaviour
 
     public void TravelToProfile(CardTemplate witch)
     {
+        SoundManager.instance.PlayAppClick();
         currentWitch = witch.theWitch;
         pfp.texture = currentWitch.GetPfp();
         description.text = currentWitch.GetDescription();
@@ -65,16 +66,19 @@ public class AppScreen : MonoBehaviour
     {
         mainScreen.SetActive(true);
         profileScreen.SetActive(false);
+        SoundManager.instance.PlayAppClick();
     }
 
     public void ConfirmCall()
     {
         confirmCall.SetActive(true);
+        SoundManager.instance.PlayAppClick();
     }
 
     public void CancelCall()
     {
         confirmCall.SetActive(false);
+        SoundManager.instance.PlayAppClick();
     }
 
     public void Call()

@@ -38,6 +38,8 @@ public class CallAnimation : MonoBehaviour
     //forgive me for the hacky approach
     private IEnumerator BeginCallAnimation()
     {
+        SoundManager.instance.PlayRingtone();
+
         for (int i = 0; i < ellipses.Length; i++)
         {
             for (float t = 0.01f; t < fadeTime; t += Time.deltaTime)

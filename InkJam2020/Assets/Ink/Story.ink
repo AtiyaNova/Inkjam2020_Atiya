@@ -1,9 +1,10 @@
 EXTERNAL SetCharacter(active)
 EXTERNAL ChangeScenery(index)
-EXTERNAL CalculateEndering()
+EXTERNAL DisplayMessage()
 EXTERNAL ActivatePoltergeist(temp)
 EXTERNAL SetTime(index)
 EXTERNAL ProgressDay(num)
+EXTERNAL SetWitchExpression(index)
 
 You've been hired to test out an experimental app called “Witch Helpers” before its release. The purpose of this app is to allow the user to summon a witch of their choosing in their time of need. 
 
@@ -26,6 +27,7 @@ You unlock your phone.
         "So? What of it?"
     --"I called you because I'm hungry and I was hoping you'd cook."
    Her face is calm at first. Then she flushes an angry scarlet. 
+           {SetWitchExpression(1)}
    "How dare you waste my time with such trifles? Are you trying to make a mockery of me?"
    You raise your hands and attempt to explain, but before you know it she's gone, disappearing as suddenly as she arrived.
    {SetCharacter(false)}
@@ -51,6 +53,7 @@ You unlock your phone.
     {SetCharacter(false)}
     "That looks fantastic!" You say, standing up. 
     She gave you a mischeavous smile with a twinkle in her eyes. "I've always been a very good cook." She says. 
+            {SetWitchExpression(2)}
             {SetCharacter(true)}
     Before you can compliment her further, she disappears.
             {SetCharacter(false)}
@@ -69,6 +72,7 @@ You unlock your phone.
     --"I... erm... called you because I'm hungry and I was hoping you'd cook."
     Jutting her nose in the air, she promptly stands up. 
     "I don't know who you think I am, child, but I am not your mother," she says.
+            {SetWitchExpression(1)}
     "I <i>am</i> the mother of many other children, but you are no wayward child."
     She takes a step closer towards you. "Far from it. You are quite the unruly adult. The least you can do is cook your own meals, but apparently that's too much to ask for."
     You duck your head at her admonishments. When you look up you realize that she left without saying a goodbye.
@@ -89,6 +93,7 @@ You unlock your phone.
         She frowns. "Oh dear, you are? Do you happen to have any food...?"
     --"I called you because I'm hungry and I was hoping you'd cook."
     That gives her pause. For a second she looks like she is going to say no, then she hangs her head in defeat.
+            {SetWitchExpression(1)}
     "I... I'll try my best," she says. 
     You lead her to your tiny kitchen. She squeezes in and stares at your cooking utensils.
     "I wonder if this is anything like brewing potions."
@@ -111,7 +116,7 @@ You have some time before work, so you decide to go on a refreshing morning walk
 There are several missing cat signs that catch your eye.
     {ChangeScenery(6)}
 You have a soft spot for cats, and feel a pang at the thought of these animals wandering sad and alone. 
-This may be a good opportunity to summon a witch. Perhaps one of them would be able to help find the cats...?
+This may be a good opportunity to summon a witch. Perhaps one of them will be able to help find the cats...?
 
 *You choose to call Diana.
 {SetCharacter(true)}
@@ -123,11 +128,13 @@ This may be a good opportunity to summon a witch. Perhaps one of them would be a
         Her eyes glaze over. She look sadly over at some of the missing posters. "Yes, it seems like they have."
     --"I called you here because I was hoping you could help find the missing cats, and return them to their owner."
     She looks stunned. Then she fidgets. 
-    "Well, if the purpose is to find lost cats, I suppose I could lend my time," she mumbles.
+    {SetWitchExpression(2)}
+    "Well, if the purpose is to find lost cats, I suppose I could lend my time," she says.
     She disappears without another word. 
+            
     {SetCharacter(false)}
     You wait a couple of minutes to see if she would return, and then go about your day, thoroughly confused.
-    Later that night you receive text messages on your phone. 
+    Later that night you receive text messages on your phone. {DisplayMessage()}
         {ChangeScenery(9)}
     It seems that she not only helped the one cat, she went around and found all the other cats as well. 
     You go to bed with a smile on your face. 
@@ -138,18 +145,17 @@ This may be a good opportunity to summon a witch. Perhaps one of them would be a
     Then the ground begins shaking.
     In the distance you see a house running lopsidedly towards you. A house with chicken legs.
     {SetCharacter(true)}
-    Comandeering the house is none other than Baba Yaga. "I'm taking it out for a walk," she says, in response to your quizzical look."
+    Comandeering the house is none other than Baba Yaga. "I'm taking it out for a walk," she says, in response to your quizzical look.
+    {SetWitchExpression(1)}
     **Do you like cats?
         She taps her chin and hums. "They're too chewy," she says after thinking really hard.
     **A lot of cats have been going missing. 
         She grunts. "Someone's probably eating them."
         You choose to ignore her disturbing words.
     --"I called you here because I was hoping you could help find the missing cats, and return them to their owner."
-    The witch rolls her shoulders, then shrugs. "Okay."
-    {SetCharacter(false)}
+    The witch rolls her shoulders, then shrugs. "Okay." {SetCharacter(false)}
     She gives a quick glance at the posters, and then climbs back into her cabin. The house rears all the way up.
-    At first it's still. Then with no warning it begins running through the park. 
-    
+    At first it's still. Then with no warning it begins running through the park.        {ChangeScenery(1)}
     You can hear the witch hollering the names of the cats, and passerby screaming as they try to avoid the onslaught of chicken legs.
     Grimacing, your turn on your heel make your way home. In hindsight, calling her was a bad idea. 
 
@@ -186,6 +192,7 @@ This may be a good opportunity to summon a witch. Perhaps one of them would be a
         Her eyes become wide. "Oh no, that's horrible!"
     --"I called you here because I was hoping you could help find the missing cats, and return them to their owner."
         She opens and closes her mouth several times, then grimances. 
+        {SetWitchExpression(1)}
         "I'm sorry, I don't think that's a good idea. I think I'd melt the cats." 
         The thought makes you shudder. You give her a sympathetic nod, and thank her for hearing your request.
         With a <i>pop</i> she's gone, leaving a trail of smoldering grass in her wake.
@@ -207,6 +214,7 @@ You know right away that this isn't a situation you can handle. You have to call
 *You choose to call Diana.
 {SetCharacter(true)}
     Diana appears next to you. She gives you a suspicious look, then at the sight of your plants her eyes widen.
+    {SetWitchExpression(1)}
     "Your garden is cursed! Foolish girl, who have you angered?"
     **"I don't know who or what caused this."
         She tuts under her breath. "That won't make this any easier."
@@ -214,9 +222,14 @@ You know right away that this isn't a situation you can handle. You have to call
         She gives a snort.
     --"Do you think you can fix this?"
     Diana massages her temples. "Ugh. No, I don't think I can. I'll give it a try anyways."
-    The witch begins her spellwork. One by one cats appear in your apartment with a <i>pop</i>. 
+    {SetWitchExpression(0)}
+    The witch begins her spellwork. One by one cats appear in your apartment with a <i>pop</i>.        
+    {ChangeScenery(5)}
+    {SetCharacter(false)}
     They ignore you and make a beeline for the witch, forming a circle around her and mewling in tune with her chanting. 
     When she is finished she takes a breath. She looks at your garden--still very overgrown--and then at you with a frustrated gleam in her eyes. 
+    {SetCharacter(true)}
+    {ChangeScenery(11)}
     "It didn't work," she says.
     You feel tired. "That's ok," you say weakly. It's getting late, and you want to be left alone. 
     She doesn't say anything further, just snaps her finger and then she, along with the cats, are gone.
@@ -227,6 +240,7 @@ You know right away that this isn't a situation you can handle. You have to call
 *You choose to call Baba Yaga.
 {SetCharacter(true)}
     The old witch looks unhappy to be in the apartment. "Whadya want?" she asks, scratching her back.
+    {SetWitchExpression(1)}
     You gesture towards your balcony. She hobbles up to it, and hums as she stares at it with squinted eyes. 
      **"I don't know who or what caused this."
         "That's makes two of us."
@@ -235,6 +249,7 @@ You know right away that this isn't a situation you can handle. You have to call
     --"Do you think you can fix this?"
     The witch rubs her hands together. "Maybe. Dunno."
     She begins her spell work. She waves her hands wildly in the air while muttering under her breath. 
+    {SetWitchExpression(0)}
     Sometimes she leaps across the room, making wild gestures to seemingly no one. 
     Intrigued by the sight, you sit down on a couch and watch her work. 
     When she finally stops, she is panting. Shaking her head, she says, "Didn't work."
@@ -247,6 +262,7 @@ You know right away that this isn't a situation you can handle. You have to call
 *You choose to call Gryla.
 {SetCharacter(true)}
     The witch shows up disgruntled. "There better be a reason for this disturbance, child."
+    {SetWitchExpression(1)}
     You explain your situation as you take her over to your balcony. She eyes the plants with distaste.
      **"I don't know who or what caused this."
         She sighs. "This would have been an easier problem to solve if you did."
@@ -254,6 +270,7 @@ You know right away that this isn't a situation you can handle. You have to call
         She cocks an eyebrow. "This doesn't look like something caused out of no reason. But, perhaps, if a stray spell went awry..."
     --"Do you think you can fix this?
         She purses her lips. "I suppose I can try."
+        {SetWitchExpression(0)}
         She puts two fingers in her mouth and whistles. You hear the sound of laughter, following by objects in your apartment getting knocked over.
         Then you see the vines thrashing about.
         Gryla explains to you that her children are trying to rip apart the vines. But to no avail--everytime one gets ripped off, another grows back in its place. 
@@ -267,6 +284,7 @@ You know right away that this isn't a situation you can handle. You have to call
 *You choose to call Pesta.
 {SetCharacter(true)}
     Pesta arrives right away, her eyes wide in surprise. "What's wrong??" She asks.
+    {SetWitchExpression(1)}
     You take her to your balcony. She "ooohed" at the sight of the plants.
      **"I don't know who or what caused this."
         "Sometimes no one causes things like this," she says, examining the plants further. "Sometimes it just happens"
@@ -274,8 +292,9 @@ You know right away that this isn't a situation you can handle. You have to call
         Pesta gives a small smile. "I don't see why anyone would want to curse you."
     --"Do you think you can fix this?"
          She hesitates. "I suppose I can try..."
+         {SetWitchExpression(2)}
         She touches all the plants one by one. They slowly decay, and then deteriorate.
-        It takes a while, but eventually she gets through all of them. 
+        It takes a while, but eventually she gets through all of them.        {ChangeScenery(12)}
         Pesta beams at her handiwork. "There!" she says.
         All your plants are gone, reduced to heaps of dust. But you feel happy that your balcony is cleared. You return her smile. 
         Pesta is giddy with joy. "I'm glad I was useful!" She says her goodbyes, and leaves.
@@ -294,7 +313,7 @@ This is an emergency. You quickly whip out your phone, and get ready to call.
 
 *You choose to call Diana.
 {SetCharacter(true)}
-    Diana arrives, looking annoyed. Her cat is deep asleep on her shoulders.
+    Diana arrives, looking annoyed. 
     "What is the meaning of thi--" she freezes when she notices the flying objects.
      **"What's going on?!"
         Diana sucks in her breath. "Poltergeists."
@@ -314,7 +333,8 @@ This is an emergency. You quickly whip out your phone, and get ready to call.
 *You choose to call Baba Yaga.
 {SetCharacter(true)}
     When the old hag finally arrives, it's almost dawn.
-    She looks annoyed to be here. "Whadya want?" she asks, shuffling her feet. 
+    She looks annoyed to be here. "What do you want?" she asks, shuffling her feet. 
+    {SetWitchExpression(1)}
     Then she takes notice of the flying furniture. "Oh. That's what. 
   **"What's going on?!"
         "I got no clue."
@@ -322,10 +342,11 @@ This is an emergency. You quickly whip out your phone, and get ready to call.
         "How should I know?"
     --"Please help me!"
     She scratches her chin. "You know what. I'll make some food. That usually helps."
+    {SetWitchExpression(0)}
     You assume she means food for you, but to your surprise she disappears.
     {SetCharacter(false)}
     You let out a grunt of frustration and make your way to your room, barring the door shut and hiding under the blanket. 
-    Eventually the sound of the poltergeist wreaking havoc dies down, and you're able to get a small burst of sleep. 
+    Eventually the sound of the poltergeist wreaking havoc dies down, and you're able to get a couple hours of sleep. 
     {ActivatePoltergeist(false)}
 
 *You choose to call Gryla.
@@ -336,11 +357,14 @@ This is an emergency. You quickly whip out your phone, and get ready to call.
     **"Do you know how to stop this?"
         She gives a grim smile. "Luckily for you, I do."
     --"Please help me!"
+    {SetWitchExpression(2)}
     Gryla tells you to return to your room. 
     As you do so, you hear her talking with the poltergeist in question--they talk well past the point you fell asleep.
     {ActivatePoltergeist(false)}
+    {SetCharacter(false)}
     When you wake up and return to your living room you see that everything has been returned to normal. 
-    If it hadn't been for Gryla's text message saying that she took care of the problem, you would've thought it was a dream.
+    You see that Gryla sent a text message explaining that she took care of the problem. {DisplayMessage()}
+    If it hadn't been for that, you would've thought it was a dream.
     
 *You choose to call Pesta.
     Pesta arrives and nervously looks around your apartment, gasping at the sight of the mess.
@@ -351,6 +375,7 @@ This is an emergency. You quickly whip out your phone, and get ready to call.
     --"Please help me!"
     "Well, I'll try..." She says. 
     She begins by trying to reason with the spirit. She melts some of the objects it tries to throw in an effort to lessen some of the damage.
+    {SetWitchExpression(1)}
     Nothing is working. It's still breaking things in your apartment, until finally morning struck, and it is gone. 
         {ActivatePoltergeist(false)}
     Pesta keeps apologizing. "I'm so sorry, I should've been better, I should've..."
@@ -359,31 +384,39 @@ This is an emergency. You quickly whip out your phone, and get ready to call.
     {SetCharacter(false)}
     You're exhausted. Even though it's morning you walk back to your bedroom, and crawl into bed. 
 
--The next day. {ChangeScenery(8)}
+-The next day. {ChangeScenery(7)}
     {ProgressDay(5)}
     {SetTime(0)}
-    ->BestEnding
+    * When you talk to the company, you mention that it's difficult to tell what each of the witches are good for. ->GoodEnding
+    * You aren't sure how to feel about the app. ->MixedEnding
+    * You have a plethora of angry complaints that you hand over to the company. ->WorstEnding
 
-==BestEnding==
-You tell the company your complaints with the app. Primarily that it wasn't clear at all what the witches were willing to do.
+=== GoodEnding ===
+But other than that, you are very happy with it. 
 
-Turns out that among the testers you were one of the lucky ones. Many others have met a harsher fate by crossing the line with these witches. The company decides not to realize the app after all. In hindsight, it really doesn't seem like a good idea. 
-->DONE 
+They take your feedback into account, and are quite surprised by your words.
 
-==WorstEnding==
-You have a plethora of angry complaints that you hand over to the company.
+Turns out that among the testers you're one of the lucky ones. Many others have met a harsher fate by crossing the line with these witches. 
 
-You tell them that your appartment is in ruins, that you've had a very stressful handful of days, and that calling the witches at times was more trouble than it was worth!
-
-Not to mention that you couldn't tell what they were willing to do half the time.
-
-The company apologizes profusely and tells you that they were planning on scrapping the app all together. Turns out you weren't the only one with a negative experience.
+The company says that they were considering scrapping the app, but after hearing your feedback will rethink it. Maybe some redesigns will make it safer to use.
 ->DONE
 
-==MixedEnding==
-You aren't sure how to feel about the app. You tell the company as much when you report to them, and say that as much as it could have its uses, it can also backfire if you don't pick correctly. 
+===  MixedEnding ===
+ You tell the company as much when you report to them, and say that although it has its uses, it can also backfire if the correct witch isn't picked. 
 
-The company lets you know that they were thinking of scrapping the app altogether due to numerous complaints from other testers. You understand the frustrations completely.
+The company says that they understand your concerns. They have received numerous complaints from the other testers as well, and after taking everything into account they're deciding to scrap the app. 
+
+You feel a little sad. Some of your interactions have been quite good. Right after the meeting is over, you delete the app off your phone, wondering if you'll ever run into the witches again. 
 ->DONE
 
--->END
+=== WorstEnding ===
+You tell them that your appartment is in ruins, that you've had a very stressful handful of days, and that calling the witches do little to help with your problems. 
+
+Not to mention that you aren't able to tell what they are willing to do.
+
+The company apologizes profusely and tells you that they are planning on scrapping the app all together. Turns out you aren't the only one with a negative experience, and the app is too much of a hazard.
+
+After your meeting with the company you promptly delete it off your phone. 
+->DONE
+
+->END

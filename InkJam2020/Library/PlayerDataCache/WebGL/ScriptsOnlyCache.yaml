@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - Ink.UnityIntegration.InkSettings
     Assembly-CSharp.dll:
     - AppScreen
+    - CallAnimation
     - CallWitch
     - CardTemplate
     - ClickApp
@@ -13,6 +14,7 @@ ScriptsOnlyBuild:
     - HomeButton
     - PhoneGeneral
     - Poltergeist
+    - SoundManager
     - StoryManager
     - SwipeToUnlock
     - Witch
@@ -42,7 +44,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.RawImage
-    - UnityEngine.UI.Shadow
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
@@ -66,6 +67,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
@@ -78,8 +83,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11988}
     - Class: 114
       Script: {instanceID: 12166}
-    - Class: 114
-      Script: {instanceID: 12394}
     - Class: 114
       Script: {instanceID: 12470}
     - Class: 114
@@ -105,11 +108,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13552}
     - Class: 114
-      Script: {instanceID: 13654}
+      Script: {instanceID: 13608}
     - Class: 114
-      Script: {instanceID: 13842}
+      Script: {instanceID: 13656}
     - Class: 114
-      Script: {instanceID: 14102}
+      Script: {instanceID: 13736}
+    - Class: 114
+      Script: {instanceID: 13846}
+    - Class: 114
+      Script: {instanceID: 14106}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -311,7 +318,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 0bc99cf61c7af3cfe2a8fd10ae1455b1
+      Hash: 237558025b9d27d73afb037ae0eb5679
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Poltergeist
@@ -353,7 +360,7 @@ ScriptsOnlyBuild:
     className: BasicInkExample
   - hash:
       serializedVersion: 2
-      Hash: 0784e01237aefadf86e66e3a142f4306
+      Hash: 725415a1e33f04efe48357cbacb3843e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AppScreen
@@ -377,7 +384,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: e7e4955fac48d6426719d04d721844f2
+      Hash: a492aed10a00c1379f3eaeb2ab02f5a0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ExpandedImage
@@ -395,7 +402,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 5a08a542ac2bd33622bacc88eafa2a37
+      Hash: 297d636a573d22e6211d97fd33194e19
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StoryManager
@@ -479,7 +486,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 861f5a2dd48ddd1e7b5d2f08160c04f4
+      Hash: 9a6503c52eab544e53b093df13a0b063
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Witch
@@ -491,13 +498,13 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 762a2cd46b5a0967c9f4814db80534b2
+      Hash: 1a18f0514d6f4804279b34edeb81a3fa
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PhoneGeneral
   - hash:
       serializedVersion: 2
-      Hash: 54b2ff03ed62e06642b7aefabb48be7d
+      Hash: fcad5054654df45b7fdd494f3c94c0d0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GalleryIcon
@@ -507,6 +514,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshProUGUI
+  - hash:
+      serializedVersion: 2
+      Hash: 0e0ea5341789207e749d2eb75a1bcc1d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SoundManager
   - hash:
       serializedVersion: 2
       Hash: f336e086360abe49a3323e5f1583c35a
@@ -525,6 +538,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: e8f5ad78623b700b26088915e340921f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CallAnimation
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
